@@ -31,11 +31,15 @@ export const Navbar = styled.div`
   justify-content: space-around;
   align-items: center;
   width: 100%;
-  height: 20% !important;
+  height: 12% !important;
   margin-top: 0px;
   position: fixed;
   z-index: 111;
-  backdrop-filter: blur(10px);
+  /* backdrop-filter: blur(10px); */
+
+  @media screen  and (max-width:1000px) {
+    justify-content: space-between;
+  }
 `
 
 export const Navbarright = styled.div`
@@ -53,6 +57,9 @@ export const Navbarright = styled.div`
     transition: all 3s;
     }
 
+    @media screen  and (max-width:1000px) {
+      margin-left: 2rem;
+     }
     @media screen  and (max-width:500px) {
       width: 120px;
      }
@@ -71,50 +78,118 @@ export const Div = styled.div`
  display: flex;
  /* justify-content: space-between; */
  align-items: center;
- margin: 0 50px;
+ margin: 0px;
 
-  button{
-    font-weight: 600;
-    font-size: 16px;
-    cursor: pointer;
-    border: none;
-    margin-right: 0px;
-    background-color: transparent !important;
-    color: #ffff;
-    width: 100px;
-    height: 40px;
-    transition: all 0.5s;
-    transform: scale(1.1);
 
-    &:hover{
-    transform: scale(1.1);
-    color: red!important;
-    transition: all 2s;
+ .libottom {
+    display: inline-block !important;
+    align-items: center;
+    margin: 0px!important;
+    text-transform: uppercase !important;
+    width: auto;
+  }
+  .libottom:after {
+    display: block !important;
+    content: "" !important;
+    border-bottom: solid 2px !important;
+    border-image: linear-gradient(
+        to right,
+        rgba(173, 0, 255, 1),
+        rgba(0, 224, 255, 1)
+      )
+      1 !important;
+    transform: scaleX(0) !important;
+    transition: transform 250ms ease-in-out !important;
+  }
+  .libottom:hover:after {
+    transform: scaleX(1) !important;
+  }
+  .libottom:after {
+    transform-origin: 0% 50% !important;
+  }
+
+  @media screen  and (max-width:1000px) {
+      display: none !important;
     }
+`
 
-      @media screen  and (max-width:1000px) {
-        display: none !important;
-      }
+export const Buttondiv = styled.button`
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  margin-right: 0px;
+  background-color: transparent !important;
+  color: #ffff;
+  width: 110px;
+  height: 40px;
+  transition: all 0.5s;
+  transform: scale(1.1);
 
-      :hover{
-        background: linear-gradient(90deg, #3ee6cf 41%, #c96edaf6 ) !important;
-        color: black;
-        border-radius: 5px;
-        cursor: pointer;
-        transform: scale(1.1);
-        color: gray;
-        transition: all 2s;
-   }
-
+  :nth-child(1){
+    margin-top: 8px !important;
+    margin-right: 30px !important;
+  }
+  :nth-child(2){
+    margin-top: 8px !important;
+    margin-right: 30px !important;
+  }
+  :nth-child(3){
+    margin-top: 8px !important;
+    margin-right: 30px !important;
+  }
+  :nth-child(4){
+    margin-top: 8px !important;
+    margin-right: 30px !important;
   }
 `
- export const MuiButton = styled(Button)`
 
-  &:hover{
-    transform: rotateX(360deg) !important;
-    cursor: pointer !important;
-    color: aquamarine !important;
-  }
+ export const MuiButton = styled(Button)`
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+    position: relative;
+    outline: none;
+    color: #fff;
+    width: 171px;
+    height: 45px;
+    font-size: 17px;
+    line-height: 42px;
+    padding: 0;
+    border: none;
+    background-color: #8F00FF !important;
+
+    &:hover{
+        background-color: transparent  !important;
+        box-shadow:none !important;
+    }
+
+    &::before,::after{
+        content:'';
+        position:absolute;
+        top:0;
+        right:0;
+        height:2px;
+        width:0;
+        background: linear-gradient(92.49deg, #AD00FF 14.3%, #00E0FF 100%);
+        transition:400ms ease all;
+    }
+
+    &::after{
+        right:inherit;
+        top:inherit;
+        left:0;
+        bottom:0;
+    }
+
+    &:hover::before,:hover::after{
+        width:100%;
+        transition:800ms ease all;
+    }
 
   @media screen  and (max-width:1000px) {
       display: none !important;
@@ -157,9 +232,10 @@ export const Center = styled.div`
   font-family: 'Russo One';
   font-style: normal;
   font-size: 60px;
-  line-height: 101px;
+  line-height: 80px;
   text-align: center;
   color: #FFFFFF;
+  letter-spacing: 5px;
 
   @media screen  and (max-width:1050px) {
     margin-top: 50px;
@@ -219,6 +295,7 @@ export const BtnWrap = styled.div`
 
     @media screen  and (max-width:1000px) {
      display: block !important;
+     margin-right: 2rem;
   }
 
 `

@@ -21,7 +21,6 @@ export const Container2 = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
   cursor: pointer;
-  /* linear-gradient(rgba(0, 0, 0, 0.7)), */
 `
 export const Navbar = styled.div`
   display: flex;
@@ -80,7 +79,7 @@ export const Navbar = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 550px;
+    width: 650px;
 
   @media (max-width:1000px) {
       display: ${p=>p.bolen ? 'none' : 'flex'};
@@ -385,34 +384,46 @@ export const Divright = styled.div`
 
   export const Centerend = styled.div`
   display: flex;
-  justify-content: right !important;
+  justify-content: space-around;
   align-items: center;
+
+/*
+  @media screen  and (max-width:1440px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   } */
 
   @media screen  and (max-width:1000px) {
     flex-direction: column;
     justify-content: center !important;
     align-items: center;
-    margin-top: 5rem;
+    margin-top: 5rem !important;
    }
 
 `
   export const Buttonclick = styled(Button)`
-  width: 140px;
+  width: 180px;
   height: 50px;
-  right: 9rem;
+  right: 2rem;
   border-radius: 4px;
-  background-color: #000000;
+  /* background-color: #000000; */
   color: white !important;
   cursor: pointer;
   border-image: linear-gradient(90deg, rgba(2,255,222,1) 41%, rgba(218,0,255,0.9668242296918768) 70%) !important;
   border-image-slice: 1 !important;
+  top: -2rem !important;
+
+  @media screen  and (max-width:1440px) {
+      right: -5rem !important;
+   }
 
   @media screen  and (max-width:1000px) {
     display: flex;
     justify-content: center !important;
     right: 0rem !important;
     align-items: center;
-    margin-top: 5rem;
+    top: -10rem !important;
    }
 
 `
@@ -435,7 +446,6 @@ export const Images = styled.div`
     display: flex;
     align-items: center !important;
     justify-content: left !important;
-    /* margin-right: 11rem; */
 
     @media screen and (max-width: 1155px) {
         transform: scale(0.9);
@@ -579,7 +589,19 @@ export const Item10 = styled.img`
     left: 958px;
 `
   export const Buttext = styled.div`
-    margin-top: 5rem;
+    margin-top: 3rem;
+    margin-left: 2rem;
+
+    @media screen  and (max-width:1440px) {
+      margin-left: -9rem;
+   }
+
+    @media screen  and (max-width:1000px) {
+        text-align: center;
+        margin-top: 0rem;
+        padding-top: 5rem;
+        top: 0rem !important;
+      }
 
       h1{
       font-style: normal;
@@ -587,13 +609,13 @@ export const Item10 = styled.img`
       font-size: 28px;
       line-height: 34px;
       color: #FFFFFF;
-      margin-left:8rem;
-      margin-top: 0rem;
-      /* margin-left: 0rem !important; */
+      margin-left:0rem !important;
+      padding-top: 5rem !important;
 
       @media screen  and (max-width:1000px) {
         text-align: center;
         margin-left: 0rem !important;
+        padding-top: 0rem !important;
       }
     }
 `
@@ -608,8 +630,8 @@ export const Div = styled.div`
     margin-top: 0rem !important;
    }
    @media screen and (max-width: 680px) {
-        flex-direction: column !important;
-    }
+      flex-direction: column !important;
+  }
 
 `
 
@@ -753,6 +775,10 @@ export const InpButtons = styled.div`
         color: #FFFFFF;
         transition: all ease 0.3s;
         border: 2px solid rgb(0,0,0,0);
+
+        @media (max-width:750px) {
+          font-size: 20px;
+      }
 
         &:hover{
             background-color: #ffffff30;
@@ -1032,15 +1058,14 @@ export const Divphot2 = styled.div`
 
 `
 export const Divphotoimg = styled.div`
-display: flex;
-justify-content: center;
-align-items: center;
-border: 1px solid;
-width: 180px;
-height: 180px;
-border: none;
-background-color: #ad00ff;
-border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid; */
+  width: 180px;
+  height: 180px;
+  border: none;
+  background-color: #ad00ff;
 `
 export const Photo2img = styled.img`
   width: 180px;
@@ -1076,7 +1101,7 @@ export const Divphot3 = styled.div`
   align-items: center;
   width: 55%;
   height: 135px;
-  border: 2px dotted #4b48e7;
+  border: 2px dashed #4b48e7;
 
   @media screen and (max-width:900px) {
     margin-top: 20px;
@@ -1084,17 +1109,18 @@ export const Divphot3 = styled.div`
  }
 `
 export const Label = styled.label`
-display: flex;
-justify-content: center;
-align-items: center;
-width: 192px;
-height: 42px;
-border:none;
-color: #ffff;
-background: #8F00FF;
-cursor: pointer;
-border-radius: 10px;
-transition: all 1s;
+  font-family: 'Montserrat';
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 192px;
+  height: 42px;
+  border:none;
+  color: #ffff;
+  background: #8F00FF;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: all 1s;
 
 
 :hover{
@@ -1107,7 +1133,8 @@ transition: all 1s;
  }
 `
 export const InpH3 = styled.h3`
-color: #808191;
+  font-family: 'Montserrat';
+  color: #808191;
 
 @media screen and (max-width:800px) {
   display: none;
@@ -1120,15 +1147,11 @@ export const Select12 = styled(Select)`
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 18px;
   outline: none !important;
   border: none !important;
-  background: none !important;
-  line-height: 27px;
-  color: black !important;
+   line-height: 20px;
+  color: red !important;
   transition: all 4s;
-
-  @media screen  and (max-width:350px) {
-
-  }
+  font-weight: 600;
 `

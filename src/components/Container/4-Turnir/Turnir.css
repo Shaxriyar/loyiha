@@ -27,7 +27,7 @@
 
 
 #item-1 {
-  background-color: #B75D9B;
+  /* background-color: #B75D9B; */
   grid-area: label1;
 }
 
@@ -48,13 +48,13 @@
 }
 
 #item-3 {
-  background-color: #9D75DD;
+  /* background-color: #9D75DD; */
   grid-area: label3;
 }
 
 .grid4{
-  height: 100%;
-  width: 100%;
+  /* height: 100%; */
+  /* width: 110%; */
 }
 
 #item-4 {
@@ -122,12 +122,14 @@
   text-align: center !important;
   font-family: 'Montserrat' !important;
   font-style: normal;
-  font-weight: 800 !important;
-  font-size: 20px !important;
-  padding-left: 2rem !important;
+  font-weight: 600 !important;
+  font-size: 18px !important;
+  padding-left: 0rem !important;
   line-height: 27px;
-  color: red !important;
+  color: white !important;
   transition: all 1s !important;
+  padding-bottom: 10px;
+
 }
 
 .css-tlfecz-indicatorContainer {
@@ -135,12 +137,18 @@
 }
 
 .css-1s2u09g-control {
-  text-align: center !important;
-  background: none !important;
-  border: none !important ;
-  color: red !important;
-
+position: relative !important;
+outline: none !important;
+color: #fff !important;
+/* width: 171px !important; */
+height: 45px !important;
+font-size: 17px !important;
+line-height: 42px !important;
+padding: 0 !important;
+border: none !important;
+background-color: #8F00FF !important;
 }
+
 
 @media screen and (max-width:1000px) {
   .css-1s2u09g-control{
@@ -148,24 +156,15 @@
     height: 50px !important;
     font-weight: 800 !important;
     border-radius: 10px !important;
-    background-color: white !important;
-    color: red !important;
-    cursor: pointer !important;
-    border-image: linear-gradient(90deg,rgba(2,255,222,1) 41%,rgba(218,0,255,0.9668242296918768) 70%) !important;
-    border-image-slice: 1 !important;
+
   }
 }
 @media screen and (max-width:350px) {
   .css-1s2u09g-control{
     width: 250px !important;
-
   }
 }
 
-
-.css-319lph-ValueContainer {
-
-}
 
 .css-6j8wv5-Input {
   color: hsl(0, 79%, 58%) !important;
@@ -187,37 +186,23 @@
   transition: all 4s !important;
 }
 
-.css-1hb7zxy-IndicatorsContainer {
-
-}
-
-.css-tlfecz-indicatorContainer {
-
-}
-
-.css-1s2u09g-control {
-
-}
-
-.css-1s2u09g-control {
-
-}
-
-.eMZRte .libottom {
-
-}
-
-.jmaWKe {
-
-}
-
 .css-tj5bde-Svg {
   font-family: 'Montserrat' !important;
   font-style: normal;
   font-weight: 400 !important;
   font-size: 20px !important;
   line-height: 27px;
-  color: red !important;
+  color: white !important;
   transition: all 4s !important;
+}
+
+
+.css-tj5bde-Svg {
+  display: inline-block;
+  fill: black !important;
+  line-height: 3;
+  stroke: currentColor;
+  stroke-width: 0;
+  margin-bottom: 10px;
 
 }

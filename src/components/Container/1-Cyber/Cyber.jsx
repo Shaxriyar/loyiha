@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import { Container, Navbar, Navbarright, Navbarleft, Div, Link, Button, BtnWrap, Center, MenuBtn, MuiButton, ScrollToTop1} from './CyberStyle';
+import { Container, Navbar, Navbarright, Navbarleft, Div, Link, Button, BtnWrap, Center, MenuBtn, MuiButton, ScrollToTop1, Buttondiv} from './CyberStyle';
 
 //mui-icons import qilindi
 import {Menu} from "@mui/icons-material"
@@ -42,7 +42,7 @@ const Cyber = () => {
   const [navSize, setnavSize] = useState('10rem');
   const [navColor, setnavColor] = useState('transparent');
   const listenScrollEvent = () =>{
-    window.scrollY > 10 ? setnavColor("#5757f1a9") : setnavColor("transparent");
+    window.scrollY > 10 ? setnavColor("#2b3785") : setnavColor("transparent");
     window.scrollY >10 ? setnavSize("6rem") : setnavSize("10rem");
   };
 
@@ -93,14 +93,14 @@ const Cyber = () => {
       </Navbarright>
 
         <Navbarleft>
-            <Div>
-              <button onClick={()=>Scrolling(500)}>О нас</button>
-              <button onClick={()=>Scrolling(1600)}>Турниры</button>
-              <button onClick={()=>Scrolling(3300)}>Счёты</button>
-              <button onClick={()=>Scrolling(2700)}>Фото</button>
+            <Div className='libottom'>
+              <Buttondiv className='libottom' onClick={()=>Scrolling(500)}>Biz haqimizda</Buttondiv>
+              <Buttondiv className='libottom' onClick={()=>Scrolling(1600)}>Turnirlar</Buttondiv>
+              <Buttondiv className='libottom' onClick={()=>Scrolling(3300)}>Xisob</Buttondiv>
+              <Buttondiv className='libottom' onClick={()=>Scrolling(2700)}>Rasmlar</Buttondiv>
             </Div>
 
-          <MuiButton onClick={()=>Scrolling(3700)} variant='contained'>Регистрация</MuiButton>
+          <MuiButton onClick={()=>Scrolling(3700)} variant='contained'>Ro'yhatdan o'tish</MuiButton>
 
             <BtnWrap>
                 <MenuBtn onClick={toggleDrawer('right', true)} >
@@ -117,8 +117,8 @@ const Cyber = () => {
     {/* END  SCROLL TO TOP */}
 
       <Center>
-          <h1  data-aos="zoom-in"
-     data-aos-duration="3000">ДОБРО ПОЖАЛОВАТЬ В ИГРУ <br/> <span>DC CYBER</span> В <br/> КИБЕРСПОРТИВНЫХ ИГРАХ</h1>
+          <h1 data-aos="zoom-in"
+     data-aos-duration="3000"><span>DC-CYBER</span> <br/> KIBERSPORT O'YINLARIGA<br/> HUSH KELIBSIZ <br/> </h1>
       </Center>
 
      <TemporaryDrawer state={state} setState={setState}/>

@@ -7,10 +7,8 @@ const Qoshish = () => {
   return (
     <Container>
       <Center>
-           <h1 >ПРИШЛО ВРЕМЯ ПОГРУЖАТЬСЯ В МИР КИБЕРСПОРТА С DIGITAL CITY-SPORT! СТАНЬТЕ ЧАСТЬЮ НАШЕЙ КОМАНДЫ СЕГОДНЯ</h1>
-
-           <Buttonclick  variant="outlined">Записаться</Buttonclick>
-
+           <h1 >DIGITAL CITY-SPORT BILAN KIBESPORT DUNYOSIGA SHO'NG'ISH VAQTI KELDI! BUGUN JAMOAMIZNING BIR QISMI BO'LING</h1>
+           <Buttonclick  variant="outlined">Ro'yxatdan o'tish</Buttonclick>
       </Center>
     </Container>
   );

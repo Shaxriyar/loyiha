@@ -1,6 +1,6 @@
 import React, {  useEffect, useState } from 'react';
 
-import { Container, Foot, Footleft, Icon, Footcenter, Footright, FacebookOutlinedIcon1, TelegramIcon2, InstagramIcon3, YouTubeIcon4, Footright1, Inpbutton, End, Checkbox1, EmailDiv, EmailIc,Text, Link22, Foot2, Foot3} from './FooterStyle';
+import { Container, Foot, Footleft, Icon, Footcenter, Footright, FacebookOutlinedIcon1, TelegramIcon2, InstagramIcon3, YouTubeIcon4, Footright1, Inpbutton, End, Checkbox1, EmailDiv, EmailIc,Text, Link22, Foot2, Foot3, Typography2} from './FooterStyle';
 
 //Icons mui
 import FacebookIcon from '@mui/icons-material/Facebook';
@@ -31,7 +31,7 @@ const useStyles = makeStyles({
   link: {
     color: 'white',
     position: 'relative',
-    fontSize: "40px",
+    fontSize: "30px",
     fontFamily: 'Montserrat',
     fontWeight: "600",
     backgroundImage:"",
@@ -114,13 +114,10 @@ const Footer = () => {
    // End LINK SCROLL
   return (
     <Container >
-      <Foot data-aos="fade-up"
-    data-aos-duration="3000">
-
-
-
-       {/* <Foot2> */}
-        <Footleft >
+      <Foot /*data-aos="fade-up"
+    data-aos-duration="3000"*/>
+      {/* <Foot2> */}
+      <Footleft >
               <img src={rasm1} alt="" />
                <Icon>
                 <FacebookOutlinedIcon1 onClick={()=>window.open('https://ru-ru.facebook.com')}/>
@@ -132,16 +129,16 @@ const Footer = () => {
 
             <Footcenter>
               <Link onClick={()=>Scrolling(500)} underline="never" className={classes.link}>
-                <Typography component="span">О нас</Typography>
+                <Typography component="span">Biz haqimizda</Typography>
               </Link>
               <Link onClick={()=>Scrolling(1600)} underline="never" className={classes.link}>
-                <Typography component="span">Турниры</Typography>
+                <Typography component="span">Turnirlar</Typography>
               </Link>
               <Link onClick={()=>Scrolling(3900)} underline="never" className={classes.link}>
-                <Typography component="span">Счёты</Typography>
+                <Typography component="span">Xisob</Typography>
               </Link>
               <Link onClick={()=>Scrolling(1800)} underline="never" className={classes.link}>
-                <Typography component="span">Фото</Typography>
+                <Typography component="span">Rasm</Typography>
               </Link>
             </Footcenter>
        {/* </Foot2> */}
@@ -153,7 +150,7 @@ const Footer = () => {
                    return(
                     <Footcenter>
                       <Link onClick={()=>Scrolling(1580)} underline="never" className={classes.link}>
-                    <Typography component="span">{item.name}</Typography>
+                    <Typography2 component="span">{item.name}</Typography2>
                     </Link>
                     </Footcenter>
                    )
@@ -163,8 +160,8 @@ const Footer = () => {
           </Footright>
 
             <Footright1>
-                <h1>Sign up to our newsletterl</h1>
-                <p> Do you want to receive the latest updates and special offers?<br/>  Enter your email bellow to receive our weekly newsletter.</p>
+                <h1>Bizning axborot byulletenlariga a'zo bo'ling</h1>
+                <p> Eng so'nggi yangilanishlar va maxsus takliflarni olishni xohlaysizmi?<br/> Haftalik axborot byulletenlarini olish uchun <br/> quyidagi elektron pochtangizni kiriting..</p>
                 <Inpbutton>
                     <input value={email} onChange={(e)=>setEmail(e.target.value)} type='email' placeholder='Your email'/>
                   <EmailDiv>
@@ -173,13 +170,13 @@ const Footer = () => {
                 </Inpbutton>
                 <End>
                   <Checkbox1/>
-                  <h3>I accept newsletter terms</h3>
+                  <h3>Men axborot byulletenlarini yuborish shartlarini qabul qilaman.</h3>
                 </End>
               </Footright1>
         {/* </Foot3> */}
       </Foot>
 
-         <Text><h1>Copyright by Digital City 2022</h1></Text>
+         <Text><h1>Raqamli shahar tomonidan mualliflik huquqi 2022</h1></Text>
     </Container>
   );
 }

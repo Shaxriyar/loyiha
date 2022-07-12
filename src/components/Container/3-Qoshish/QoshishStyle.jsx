@@ -24,23 +24,21 @@ export const Center = styled.div`
   padding: 50px 15%;
   width: 100%;
 
-  @media screen and (max-width:940px) {
+  @media screen and (max-width:1000px) {
       display: flex;
       justify-content: center;
       align-items: center;
-      flex-direction: column;
       text-align: center;
+      width: 100%;
     }
 
   h1{
     font-family: 'Russo One';
     font-style: normal;
-    width: 80%;
-    /* width: 707px;
-    height: 192px; */
+    width: 65%;
     color: #ffff;
 
-    @media screen and (max-width:550px) {
+    @media screen and (max-width:1000px) {
         width: 100%;
     }
     @media screen and (max-width:420px) {
@@ -54,7 +52,7 @@ export const Center = styled.div`
 
 `
 export const Buttonclick = styled(Button)`
-  width: 140px;
+  width: 180px;
   height: 50px;
   margin-top: 50px !important;
   border-radius: 4px;

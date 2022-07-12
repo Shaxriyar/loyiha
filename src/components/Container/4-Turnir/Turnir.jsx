@@ -9,6 +9,9 @@ import {
 //bgc img
 import phone4 from "../4-Turnir/Phone/4.png";
 
+//import Snackbar
+import Snacbar from './Snackbar/snackbar'
+
 // Start Img img
 import Img1 from "../4-Turnir/Galerphoto/Rectangle 176.png";
 import Img2 from "../4-Turnir/Galerphoto/Rectangle 177.png";
@@ -209,110 +212,119 @@ const Turnir = () => {
 
   // Start input file uploader
   const [avatar, setAvatar] = useState('')
+  // const [img, setImg] = useState('');
+  const [Img1, setImg1] = useState('');
 
   console.log(avatar)
 
   const SetImage = (e)=>{
     const rasm = e.target.files[0]
-    setAvatar(URL.createObjectURL(rasm))
+    setAvatar(rasm)
+    setImg1(URL.createObjectURL(rasm))
   }
 
-
+  //Snackbar sueState
+  const [open1, setOpen1] = React.useState(false);
 
   //registratsiya input
-
-  //Player 1 one game useState
-  const [Isim, setIsim] = useState('');
-  const [Surname, setSurname] = useState('');
-  const [Email, setEmail] = useState('');
-  const [Form, setForm] = useState('');
-  const [To, setTo] = useState('');
-  const [Napravleniya, setNapravleniya] = useState(0);
-  const [Phone, setPhone] = useState('');
-
-  //Player 2 one game useState
-  // const [Isim2, setIsim2] = useState('');
-  // const [Surname2, setSurname2] = useState('');
-  // const [Email2, setEmail2] = useState('');
-  // const [Form2, setForm2] = useState('');
-  // const [To2, setTo2] = useState('');
-  // const [Napravleniya2, setNapravleniya2] = useState(0);
-  // const [Phone2, setPhone2] = useState('');
+//Player 1 One game useState
+const [Isim, setIsim] = useState("");
+const [Surname, setSurname] = useState("");
+const [Email, setEmail] = useState("");
+const [Opit, setOpit] = useState("");
+const [To, setTo] = useState("");
+const [Naprarvleniya, setNapravleniya] = useState(0);
+const [Phone, setPhone] = useState("");
 
 
-  //FormData1
-  let formData = new FormData()
-  formData.append('player_type',1)
-  formData.append('name',Isim)
-  formData.append('surname',Surname)
-  formData.append('email',Email)
-  formData.append('experience_form',Form)
-  formData.append('experince',To)
-  formData.append('game',Napravleniya)
-  formData.append('phone',Phone)
-  formData.append('img',avatar)
-  formData.append('team_member',1)
-
-  //FormData2
-  let formData2 = new FormData()
-  // formData.append('player_type',2)
-  // formData.append('name',Isim2)
-  // formData.append('email',Email2)
-  // formData.append('experience_form',Form2)
-  // formData.append('experince',To2)
-  // formData.append('game',Napravleniya2)
-  // formData.append('phone',Phone2)
-  // formData.append('img',avatar)
-  // formData.append('team_member',Surname2)
+//Player 2 Game useState
+const [Isim2, setIsim2] = useState("");
+const [Surname2, setSurname2] = useState("");
+const [Email2, setEmail2] = useState("");
+const [Opit2, setOpit2] = useState("");
+const [To2, setTo2] = useState("");
+const [Naprarvleniya2, setNapravleniya2] = useState(0);
+const [Phone2, setPhone2] = useState("");
 
 
-  const OneGameSubmit = ()=>{
+//Data API 1 User1___________________________
+let DATAMAIN = new FormData()
+  DATAMAIN.append('player_type', 1)
+  DATAMAIN.append('name', Isim)
+  DATAMAIN.append('surname', Surname)
+  DATAMAIN.append('email', Email)
+  DATAMAIN.append('experience_from', Opit)
+  DATAMAIN.append('experience_to', To)
+  DATAMAIN.append('game', Naprarvleniya)
+  DATAMAIN.append('phone', Phone)
+  DATAMAIN.append('img',Img)
+  DATAMAIN.append('team_member',1)
+
+//Data API 1 User2__________________________
+
+let DATAMAIN2 = new FormData()
+  DATAMAIN2.append('player_type',2)
+  DATAMAIN2.append('name',Isim2)
+  DATAMAIN2.append('email',Email2)
+  DATAMAIN2.append('experience_from', Opit2)
+  DATAMAIN2.append('experience_to',To2)
+  DATAMAIN2.append('game',Naprarvleniya2)
+  DATAMAIN2.append('phone',Phone2)
+  DATAMAIN2.append('img',Img)
+  DATAMAIN2.append('team_member',Surname2)
+
+const OneGameSubmit = () => {
+// console.log(Img)
     try {
-      axios.post('http://159.65.207.213/api/user/',formData)
-      .then((res)=>{
-        console.log('Kelovr',res);
-        setIsim('')
-        setSurname('')
-        setEmail('')
-        setForm('')
-        setTo('')
-        setNapravleniya('')
-        setPhone('')
-      })
-
-
+      axios.post('http://159.65.207.213/api/user/', DATAMAIN)
+        .then((res) => {
+          console.log(res);
+          if (!res.data.error) {
+            setOpen1(true)
+          }
+          // setIsim('')
+          // setSurname('')
+          // setEmail('')
+          // setOpit('')
+          // setTo('')
+          // setPhone('')
+        })
     } catch (err) {
       console.log(err);
+
     }
+
+//_________________________________________________________________________
+  // console.log(Img)
+  try {
+    axios.post('http://159.65.207.213/api/user/', DATAMAIN2)
+      .then((res) => {
+        console.log(res);
+        if (!res.data.error) {
+          setOpen1(true)
+        }
+        // setIsim2('')
+        // setSurname2('')
+        // setEmail2('')
+        // setOpit2('')
+        // setTo2('')
+        // setPhone2('')
+      })
   }
+  catch (err) {
+    console.log(err);
+  }
+}
 
-  //   try {
-  //     axios.post('http://159.65.207.213/api/user/',formData2)
-  //     .then((res)=>{
-  //       console.log('Kelovr',res);
-  //       setIsim('')
-  //       setSurname('')
-  //       setEmail('')
-  //       setForm('')
-  //       setTo('')
-  //       setNapravleniya('')
-  //       setPhone('')
-  //     })
-
-
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // }
 
   return (
     <Container2 >
       <Navbar>
         <Left>
-          <h1> Последние турниры</h1>
+          <h1>Oxirgi turnirlar</h1>
         </Left>
 
-        <FuncButton onClick={openMenu}>Название игры</FuncButton>
+        <FuncButton onClick={openMenu}>O'yin nomi</FuncButton>
 
         <Right bolen={globalbolen}>
           {arr1 &&
@@ -324,7 +336,7 @@ const Turnir = () => {
           {/* <li className='libottom'  onClick={()=>Scrolling(200)}>CS:GO</li> */}
           {/* <li className='libottom'  onClick={()=>Scrolling(300)}>DOTA 2</li> */}
 
-            <Select12 placeholder="Other"  className="libottom" name="cars" id="lang" options={arr2} />
+            <Select12 placeholder="Boshqalar"  className="libottom" name="cars" id="lang" options={arr2} />
 
         </Right>
       </Navbar>
@@ -355,12 +367,12 @@ const Turnir = () => {
       </NavCenter>
 
       <Centerend>
-        <Buttonclick variant="outlined">Записаться</Buttonclick>
+        <Buttext>
+          <h1>Rasmlar Galereyasi</h1>
+        </Buttext>
+        <Buttonclick variant="outlined">Ro'yxatdan o'tish</Buttonclick>
       </Centerend>
 
-      <Buttext>
-        <h1>Фото Галерея</h1>
-      </Buttext>
 
       <Galereya data-aos="fade-up"
      data-aos-anchor-placement="center-bottom">
@@ -399,7 +411,7 @@ const Turnir = () => {
       </Galereya>
 
         <Ing>
-          <img src={Img1} alt="" />
+          {/* <img src={Img1} alt="" /> */}
           <img src={Img2} alt="" />
           <img src={Img3} alt="" />
           <img src={Img8} alt="" />
@@ -431,33 +443,33 @@ const Turnir = () => {
        <InpWrapper /*data-aos="fade-down"
      data-aos-easing="linear"
      data-aos-duration="1500"*/>
-              <h1>Регистрация</h1>
+              <h1>Ro'yhatdan otish</h1>
               <InpButtons>
                 <button
                 onClick={() => setCategory("solo")}
                 className="btn2"
                 style={{border:category==='solo' ? '2px solid rgba(87, 87, 241, 0.663)' : '',backgroundColor:category==='solo'?'#ffffff30':'' }}
 
-                >Один игрок</button>
+                >Bitta o'yinchi</button>
 
                 <button
                 onClick={() => setCategory("squad")}
                 className="btn3"
                 style={{border:category==='squad' ? '2px solid rgba(87, 87, 241, 0.663)' : '' , backgroundColor:category==='squad'?'#ffffff30':''}}
 
-                >Команда</button>
+                >Jamoa</button>
               </InpButtons>
 
                 <Divphoto>
                     <Divphot2>
                       {
-                        avatar === '' ?
+                        Img1 === '' ?
                        <Divphotoimg>
                           <Photo2img src={phone4} alt="" />
                        </Divphotoimg>
                         :
 
-                        <Photo2img1 src={avatar} alt="" />
+                        <Photo2img1 src={Img1} alt="" />
 
                       }
                     </Divphot2>
@@ -473,32 +485,32 @@ const Turnir = () => {
 
                   <InpInputs>
                     <InputsWrapper>
-                      <label htmlFor="">Имя</label>
+                      <label htmlFor="">Ism</label>
                       <InpInput value={Isim} onChange={(e)=>setIsim(e.target.value)}/>
-                      <label htmlFor="">Фамилия</label>
+                      <label htmlFor="">Sharifingiz</label>
                       <InpInput value={Surname} onChange={(e)=>setSurname(e.target.value)}/>
-                      <label htmlFor="">Почта</label>
+                      <label htmlFor="">Pochta</label>
                       <InpInput value={Email} onChange={(e)=>setEmail(e.target.value)}/>
                     </InputsWrapper>
                     <InputsWrapper>
-                        <label htmlFor="">Опыт(год)</label>
+                        <label htmlFor="">Tajriba(yil)</label>
                       <InputMiniWr>
-                        <InputMini placeholder='От' value={Form} onChange={(e)=>setForm(e.target.value)}/>
+                        <InputMini placeholder='dan' value={Opit} onChange={(e)=>setOpit(e.target.value)}/>
 
-                        <InputMini placeholder='До' value={To} onChange={(e)=>setTo(e.target.value)}/>
+                        <InputMini placeholder='gacha' value={To} onChange={(e)=>setTo(e.target.value)}/>
                       </InputMiniWr>
-                      <label htmlFor="">Направления</label>
+                      <label htmlFor="">Yo'nalishlar</label>
                       <Selectinput  onChange={(e)=>setNapravleniya(e.target.value)}>
                         {
                           game?.map((item,index)=>{
                             return(
-                              <Option key={index} >{item.name}</Option>
+                              <Option key={index} value={item.id} >{item.name}</Option>
                             )
                           })
                         }
                      </Selectinput>
                       <InpInput/>
-                      <label htmlFor="">Телефон</label>
+                      <label htmlFor="">Telefon raqamingiz</label>
                       <InpInput value={Phone} onChange={(e)=>setPhone(e.target.value)}/>
                     </InputsWrapper>
                   </InpInputs>
@@ -506,31 +518,31 @@ const Turnir = () => {
                   :
                   <InpInputs>
                     <InputsWrapper>
-                      <label htmlFor="">Названия</label>
-                      <InpInput/>
-                      <label htmlFor="">Число игроков</label>
-                      <InpInput/>
-                      <label htmlFor="">Почта Лидера</label>
-                      <InpInput/>
+                      <label htmlFor="">Nomi</label>
+                      <InpInput value={Isim2} onChange={(e) => setIsim2(e.target.value)}/>
+                      <label htmlFor="">O'yinchilar soni</label>
+                      <InpInput value={Surname2} onChange={(e) => setSurname2(e.target.value)}/>
+                      <label htmlFor="">Yetakchining Pochtasi</label>
+                      <InpInput value={Email2} onChange={(e) => setEmail2(e.target.value)}  />
                     </InputsWrapper>
                     <InputsWrapper>
-                        <label htmlFor="">Опыт(год)</label>
+                        <label htmlFor="">Tajriba(yil)</label>
                       <InputMiniWr>
-                        <InputMini placeholder='От'/>
-                        <InputMini placeholder='До'/>
+                        <InputMini value={Opit2} onChange={(e) => setOpit2(e.target.value)} placeholder='Dan'/>
+                        <InputMini  value={To2} onChange={(e) => setTo2(e.target.value)} placeholder='Gacha'/>
                       </InputMiniWr>
-                      <label htmlFor="">Направления</label>
-                      <Selectinput>
+                      <label htmlFor="">Yo'nalishlar</label>
+                      <Selectinput onChange={(e) => setNapravleniya2(e.target.value)}>
                         {
                           game?.map((item,index)=>{
                             return(
-                              <Option >{item.name}</Option>
+                              <Option value={item.id} >{item.name}</Option>
                             )
                           })
                         }
                      </Selectinput>
                       <InpInput/>
-                      <label htmlFor="">Телефон Лидера</label>
+                      <label value={Phone2} onChange={(e) => setPhone2(e.target.value)}  htmlFor="">Yetakchinig telefon raqami</label>
                       <InpInput/>
                     </InputsWrapper>
                   </InpInputs>
@@ -539,10 +551,12 @@ const Turnir = () => {
     {/* End Start Inwrapper */}
 
               <InpButtonWr>
-                <InpButton onClick={OneGameSubmit}>Отправить</InpButton>
+                <InpButton onClick={OneGameSubmit}>Yuborish</InpButton>
               </InpButtonWr>
             </InpWrapper>
       </Cont>
+
+      <Snacbar open1={open1} setOpen1={setOpen1} />
     </Container2>
   );
 };

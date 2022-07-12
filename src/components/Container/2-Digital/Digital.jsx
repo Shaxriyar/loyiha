@@ -33,12 +33,12 @@ const Digital = () => {
        <Div>
          <Centertop>
             <h1 data-aos="fade-up"
-     data-aos-duration="3000" >Digital City — профессиональная игровая организация, созданная в 2019 году. Наша цель — объединить самых талантливых киберспортсменов со всего мира.</h1>
+     data-aos-duration="3000" >Digital City-2019 yilda tashkil etilgan professional o'yin tashkiloti. Bizning maqsadimiz butun dunyodagi eng iqtidorli kibersprotchilarni birlashtirishdir..</h1>
             </Centertop>
 
-            <Centerend data-aos="fade-down"
+            <Centerend data-aos="fade-up"
      data-aos-easing="linear"
-     data-aos-duration="1500">
+     data-aos-duration="">
                   {
                      data?.map((item,index)=>{
                         return(

@@ -32,7 +32,7 @@ align-items: center;
 justify-content: space-evenly;
 margin-top: 30px;
 
-@media screen  and (max-width:1000px) {
+@media screen  and (max-width:1100px) {
     align-items: center;
     justify-content: center;
     flex-direction: column !important;
@@ -63,11 +63,6 @@ export const Footcenter = styled.div`
  display: flex;
  flex-direction: column;
  align-items: center;
- /* margin: 0 20px; */
-
- @media screen  and (max-width:1200px) {
-    margin-top: 2rem;
-   }
 
 button{
   margin-top: 15px;
@@ -100,16 +95,17 @@ export const Link22 = styled(Link)`
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 600;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 168%;
   letter-spacing: 0.14em;
   color: white !important;
   background-color: #131313 !important;
   border: none;
   cursor: pointer;
+
   `
 export const Footright = styled.div`
-  /* margin: 0 20px; */
+
 
   @media screen  and (max-width:1200px) {
     align-items: center;
@@ -124,9 +120,10 @@ export const Footright = styled.div`
     font-style: normal;
     font-weight: 600;
     font-size: 18px;
-    /* line-height: 168%; */
+    line-height: 168%;
     letter-spacing: 0.14em;
     color: #FFFFFF;
+
 
     @media screen  and (max-width:1200px) {
     text-align: center;
@@ -210,12 +207,13 @@ export const Foot1 = styled.div`
 `
 export const Footright1 = styled.div`
 
-@media screen  and (max-width:1100px) {
-    /* align-items: center;
-    justify-content: center;
-    flex-direction: column !important; */
-    margin-top: 2rem;
-   }
+  @media screen  and (max-width:550px) {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    flex-direction: column;
+  }
 
    h1{
     margin-top: 15px;
@@ -242,7 +240,6 @@ export const Footright1 = styled.div`
     line-height: 168%;
     letter-spacing: 0.14em;
     color: #a8a4a4;
-
     @media screen  and (max-width:1200px) {
     text-align: center;
    }
@@ -252,20 +249,21 @@ export const Footright1 = styled.div`
 export const Inpbutton = styled.div`
 display: flex;
 width: 70% !important;
-height: 60px;
+height: 50px;
 position: relative;
 
 
 @media screen  and (max-width:1200px) {
-    width: 100% !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 70% !important;
+    position:sticky;
+    margin-left: 5rem !important;
    }
-@media screen  and (max-width:600px) {
-  width: 70% !important;
-  margin-left: 5rem !important;
-   }
-@media screen  and (max-width:450px) {
-  margin-left: 4rem !important;
-   }
+
+@media screen  and (max-width:550px) {
+  margin-left: 0rem !important;
+}
 
 input{
   width: 100% !important;
@@ -281,6 +279,10 @@ input{
   ::placeholder{
     padding-left: 20px;
     transform: skew(30deg) !important;
+
+    @media screen  and (max-width:550px) {
+    padding-left: 0rem !important;
+    }
   }
 
 
@@ -324,9 +326,9 @@ export const End = styled.div`
  border: none;
 
  @media screen  and (max-width:1200px) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
    }
 
    h3{
@@ -335,19 +337,6 @@ export const End = styled.div`
     font-size: 14px;
     line-height: 168%;
     color: #888585;
-
-    :hover {
-    display: block;
-    content: "";
-    width: 34%;
-    border-bottom: solid 2px;
-    border-image: linear-gradient(
-        to right,
-        rgba(173, 0, 255, 1),
-        rgba(0, 224, 255, 1)
-      )
-      1;
-    }
    }
 `
 
@@ -363,9 +352,13 @@ export const Select1 = styled.div`
 export const Text = styled.div`
   text-align: center;
   color: gray !important;
-  font-size: 16px !important;
-  margin-top: 20px;
-  margin-bottom: 30px;
-
-
+  font-size: 10px !important;
+  margin-top:20px;
+  margin-bottom: 20px;
+`
+export const Typography2 = styled.h2`
+  text-align: center;
+  color: white !important;
+  font-size: 14px !important;
+  margin-top:20px;
 `

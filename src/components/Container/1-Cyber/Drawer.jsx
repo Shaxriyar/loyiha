@@ -11,11 +11,30 @@ import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 
 import FeedIcon from '@mui/icons-material/Feed';
-import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
-import ScoreboardIcon from '@mui/icons-material/Scoreboard';
+// import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
+// import ScoreboardIcon from '@mui/icons-material/Scoreboard';
 import PhotoIcon from '@mui/icons-material/Photo';
 import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+
+//icons
+import GroupsIcon from '@mui/icons-material/Groups';
+import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
+import ScoreboardIcon from '@mui/icons-material/Scoreboard';
+import CameraAltIcon from '@mui/icons-material/CameraAlt';
+import AppRegistrationRoundedIcon from '@mui/icons-material/AppRegistrationRounded';
+//Icons mui
+import FacebookIcon from '@mui/icons-material/Facebook';
+import TelegramIcon from '@mui/icons-material/Telegram';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import YouTubeIcon from '@mui/icons-material/YouTube';
+
+//import img
+import phone4 from "./Phone/cyber2.png";
+
+import { Photoimg , Photo, Localniset, FacebookOutlinedIcon1, TelegramIcon2, InstagramIcon3, YouTubeIcon4, IconDiv } from './StyleDrawer';
+
+import { Icon } from '@mui/material';
 
 export default function TemporaryDrawer({state,setState}) {
 
@@ -24,30 +43,36 @@ export default function TemporaryDrawer({state,setState}) {
    let maindata = [
      {
       id:1,
-      name:"О нас",
+      name:"Biz haqimizda",
       son:500,
+      icon:<GroupsIcon />
      },
 
      {
       id:1,
-      name:"Турниры",
+      name:"Turnirlar",
       son:2800,
+      icon:<SportsEsportsIcon/>
      },
 
      {
       id:1,
-      name:"Счёты",
+      name:"Xisob",
       son:9300,
+      icon:<ScoreboardIcon/>
+
      },
      {
       id:1,
-      name:"Фото",
+      name:"Rasmlar",
       son:5000,
+      icon:<CameraAltIcon/>
      },
      {
       id:1,
-      name:"Регистрация",
+      name:"Ro'yhatdan otish",
       son:10500,
+      icon:<AppRegistrationRoundedIcon />
      },
    ]
 
@@ -69,6 +94,7 @@ export default function TemporaryDrawer({state,setState}) {
     }
   // End Gamburger
 
+
   const list = (anchor) => (
     <Box
       sx= {{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250, backgroundColor:"green", color:"white", height:"100vh" }}
@@ -77,6 +103,13 @@ export default function TemporaryDrawer({state,setState}) {
       onKeyDown={toggleDrawer(anchor, false)}
     >
 
+      <Photo>
+        <Photoimg src={phone4} alt="" />
+        <div>
+
+        </div>
+      </Photo>
+
    <List>
           {
             maindata?.map((item,index)=>{
@@ -84,7 +117,7 @@ export default function TemporaryDrawer({state,setState}) {
           <ListItem key={index}  disablePadding>
                 <ListItemButton onClick={()=>Scrolling(item.son)}>
                 <ListItemIcon>
-                    <ArrowForwardIosIcon />
+                    <div style={{color: 'white'}}>{item.icon}</div>
                   </ListItemIcon>
                   <ListItemText  primary={item.name} />
                 </ListItemButton>
@@ -94,6 +127,18 @@ export default function TemporaryDrawer({state,setState}) {
           }
 
       </List>
+
+      <Localniset>
+        <IconDiv>
+          <div>
+            <FacebookOutlinedIcon1 onClick={()=>window.open('https://ru-ru.facebook.com')}/>
+            <TelegramIcon2  onClick={()=>window.open('https://telegram.org.ru/494-registraciya-v-telegramm.html')}/>
+            <InstagramIcon3 onClick={()=>window.open('https://download-instagram.ru/kak-zaregistrirovatsya-v-instagram.html')}/>
+            <YouTubeIcon4   onClick={()=>window.open('https://www.youtube.com/')}/>
+          </div>
+        </IconDiv>
+      </Localniset>
+
     </Box>
   );
 
@@ -109,6 +154,7 @@ export default function TemporaryDrawer({state,setState}) {
           >
             {list(anchor)}
           </Drawer>
+
         </React.Fragment>
       ))}
     </div>
